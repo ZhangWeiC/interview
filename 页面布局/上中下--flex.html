@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>上中下</title>
+	<style>
+		html, *{
+			margin: 0;
+			padding: 0;
+		}
+		html,body,section{
+			height: 100%;
+		}
+	</style>
+</head>
+<body>
+	<section class="flex">
+		<style>
+			.flex{
+				display: flex;
+				flex-direction: column;
+			}
+			.flex div{
+				width: 100%;
+			}
+			.flex .top{
+				height: 100px;
+				background: #FD6666;
+			}
+			.flex .mid{
+				flex: 1;
+				background: #0F80FF;
+			}
+			.flex .bottom{
+				height: 100px;
+				background: #FD8008;
+			}
+		</style>
+		<div class="top"></div>
+		<div class="mid"></div>
+		<div class="bottom"></div>
+	</section>
+</body>
+</html>

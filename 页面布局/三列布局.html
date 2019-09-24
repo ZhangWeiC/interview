@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>三列布局</title>
+	<style>
+		html, *{
+			margin: 0;
+			padding: 0;
+		}
+		section{
+			margin-bottom: 15px;
+		}
+		section div{
+			min-height: 100px;
+		}
+
+		.float .left{
+			float: left;
+			width: 300px;
+			background: #FD8008;
+		}
+		.float .center{
+			background: #20FFFF;
+		}
+		.float .right{
+			float: right;
+			width: 300px;
+			background: #FC02FF;
+		}
+
+		.position{
+			height: 100px;
+		}
+		.position .left, .position .center, .position .right{
+			position: absolute;
+		}
+		.position .left{
+			left: 0;
+			width: 300px;
+			background: #FD8008;
+		}
+		.position .center{
+			background: #20FFFF;
+			left: 300px;
+			right: 300px;
+		}
+		.position .right{
+			right: 0;
+			width: 300px;
+			background: #FC02FF;
+		}
+
+		.flex{
+			display: flex;
+		}
+		.flex .left{
+			width: 300px;
+			background: #FD8008;
+		}
+		.flex .right{
+			width: 300px;
+			background: #FC02FF;
+		}
+		.flex .center{
+			background: #20FFFF;
+			flex: 1;
+		}
+
+		.table{
+			display: table;
+			width: 100%;
+			height: 100px;
+		}
+		.table>div{
+			display: table-cell;
+		}
+		.table .right{
+			width: 300px;
+			background: #FC02FF;
+		}
+		.table .left{
+			width: 300px;
+			background: #FD8008;
+		}
+		.table .center{
+			background: #20FFFF;
+		}
+
+		.grid{
+			display: grid;
+			width: 100%;
+			grid-template-rows: 100px;
+			grid-template-columns: 300px auto 300px;
+		}
+		.grid .right{
+			background: #FC02FF;
+		}
+		.grid .left{
+			background: #FD8008;
+		}
+		.grid .center{
+			background: #20FFFF;
+		}
+	</style>
+</head>
+<body>
+	<!-- 利用float -->
+	<section class="float">
+		<div class="left"></div>
+		<!-- 注意：right在center前面 -->
+		<div class="right">利用float进行三列布局</div>
+		<div class="center"></div>
+	</section>
+
+	<!-- 利用position -->
+	<section class="position">
+		<div class="left"></div>
+		<div class="center"></div>
+		<div class="right"></div>
+	</section>
+
+	<!-- 利用flexbox -->
+	<section class="flex">
+		<div class="left"></div>
+		<div class="center"></div>
+		<div class="right"></div>
+	</section>
+
+	<!-- 利用table -->
+	<section class="table">
+		<div class="left"></div>
+		<div class="center"></div>
+		<div class="right"></div>
+	</section>
+
+	<!-- 利用grid -->
+	<section class="grid">
+		<div class="left"></div>
+		<div class="center"></div>
+		<div class="right"></div>
+	</section>
+</body>
+</html>
