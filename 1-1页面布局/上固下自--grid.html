@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>上固下自</title>
+	<style>
+		html, *{
+			margin: 0;
+			padding: 0;
+		}
+		html,body,section{
+			height: 100%;
+		}
+	</style>
+</head>
+<body>
+	<section class="grid">
+		<style>
+			.grid{
+				display: grid;
+				grid-template-columns: 100%;
+				grid-template-rows: 100px auto;
+			}
+			.grid .top{
+				background: #FD6666;
+			}
+			.grid .bottom{
+				background: #FD8008;
+			}
+		</style>
+		<div class="top"></div>
+		<div class="bottom"></div>
+	</section>
+</body>
+</html>

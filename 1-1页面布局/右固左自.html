@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>右固左自</title>
+	<style>
+		html, *{
+			margin: 0;
+			padding: 0;
+		}
+		section{
+			margin-bottom: 15px;
+		}
+	</style>
+</head>
+<body>
+	<section class="float">
+		<style>
+			.float div{
+				height: 100px;
+			}
+			.float .left{
+				background: #FC0107;
+
+			}
+			.float .right{
+				width: 300px;
+				float: right;
+				background: #CC66FF;
+			}
+		</style>
+		<div class="right"></div>
+		<div class="left"></div>
+	</section>
+
+	<!-- position -->
+	<section class="position">
+		<style>
+			.position{
+				position: relative;
+				height: 100px;
+			}
+			.position div{
+				position: absolute;
+				height: 100px;
+			}
+			.position .left{
+				background: #FC0107;
+				left: 0;
+				right: 300px;
+			}
+			.position .right{
+				width: 300px;
+				right: 0;
+				background: #CC66FF;
+			}
+		</style>
+		<div class="left"></div>
+		<div class="right"></div>
+	</section>
+
+	<!-- flex -->
+	<section class="flex">
+		<style>
+			.flex{
+				display: flex;
+			}
+			.flex div{
+				height: 100px;
+			}
+			.flex .left{
+				background: #FC0107;
+				flex: 1
+			}
+			.flex .right{
+				width: 300px;
+				background: #CC66FF;
+			}
+		</style>
+		<div class="left"></div>
+		<div class="right"></div>
+	</section>
+
+	<!-- table -->
+	<section class="table">
+		<style>
+			.table{
+				display: table;
+				width: 100%
+			}
+			.table div{
+				height: 100px;
+				display: table-cell;
+			}
+			.table .left{
+				background: #FC0107;
+			}
+			.table .right{
+				width: 300px;
+				background: #CC66FF;
+			}
+		</style>
+		<div class="left"></div>
+		<div class="right"></div>
+	</section>
+
+	<!-- grid -->
+	<section class="grid">
+		<style>
+			.grid{
+				display: grid;
+				grid-template-rows: 100px;
+				grid-template-columns: auto 300px;
+			}
+			.grid .left{
+				background: #FC0107;
+			}
+			.grid .right{
+				background: #CC66FF;
+			}
+		</style>
+		<div class="left"></div>
+		<div class="right"></div>
+	</section>
+</body>
+</html>

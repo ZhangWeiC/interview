@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>上固下自</title>
+	<style>
+		html, *{
+			margin: 0;
+			padding: 0;
+		}
+		html,body,section{
+			height: 100%;
+		}
+	</style>
+</head>
+<body>
+	<section class="position">
+		<style>
+			.position{
+				position: relative;
+				width: 100%
+			}
+			.position div{
+				position: absolute;
+				width: 100%
+			}
+			.position .top{
+				top: 0;
+				height: 100px;
+				background: #FD6666;
+			}
+			.position .bottom{
+				top: 100px;
+				bottom: 0;
+				background: #FD8008;
+			}
+		</style>
+		<div class="top"></div>
+		<div class="bottom"></div>
+	</section>
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>基本概念</title>
+  <style>
+    .standard{
+      box-sizing: content-box;
+      width: 150px;
+      height: 150px;
+      border: 10px solid rebeccapurple;
+      padding: 15px;
+      margin: 30px auto;
+    }
+
+    .ie{
+      box-sizing: border-box;
+      width: 150px;
+      height: 150px;
+      border: 10px solid rebeccapurple;
+      padding: 15px;
+      margin: 30px auto;
+    }
+  </style>
+</head>
+<body>
+  <div class="standard">
+    标准盒模型
+  </div>
+
+  <div class="ie">
+    ie盒模型
+  </div>
+</body>
+<script>
+  let st = document.getElementsByClassName('standard')[0];
+  let ie = document.getElementsByClassName('ie')[0];
+</script>
+</html>
