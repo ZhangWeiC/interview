@@ -10,9 +10,18 @@
       box-sizing: content-box;
       width: 150px;
       height: 150px;
-      border: 10px solid rebeccapurple;
-      padding: 15px;
+      /*border: 10px solid rebeccapurple;*/
+      /*padding: 15px;*/
+      padding-top: 1px;
       margin: 30px auto;
+      background: #7F7F7F;
+    }
+    .standard .child1{
+      width: 40px;
+      height: 40px;
+      margin-top: 50px;
+      border: 1px solid #9171FF;
+      background: #fff
     }
 
     .ie{
@@ -26,16 +35,25 @@
   </style>
 </head>
 <body>
-  <div class="standard">
-    标准盒模型
-  </div>
+  <!-- <div class="standard"> -->
+    <!-- 标准盒模型 -->
 
-  <div class="ie">
+    <!-- <div class="child1"></div> -->
+  <!-- </div> -->
+
+  <!-- <div class="ie">
     ie盒模型
-  </div>
+  </div> -->
+  <div style="margin-top:40px;margin-bottom:40px;background: #53C2C2"></div>
+  <!-- <div>text</div> -->
 </body>
 <script>
   let st = document.getElementsByClassName('standard')[0];
-  let ie = document.getElementsByClassName('ie')[0];
+  // let ie = document.getElementsByClassName('ie')[0];
+
+  console.log(st.style.width);  //只能获取内敛宽度
+  // console.log(st.currentStyle.width); 只能用于IE
+  console.log(window.getComputedStyle(st).width);
+  // console.log(window.getComputedStyle(ie).width);
 </script>
 </html>
