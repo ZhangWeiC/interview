@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>基本概念</title>
+</head>
+<body>
+	<script>
+		// 显示类型转换：Number(), String(), Boolean()
+		
+		console.log( Number( [].valueOf().toString() ) );
+		console.log( Number( {}.valueOf().toString() ) );
+		console.log( []+[] );
+		console.log( []+{} );
+		console.log( {}+{} );
+		console.log( {}+[] );
+		console.log( true+true );
+		console.log( 1+{a:1} );
+	</script>
+</body>
+</html>
