@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>基本概念</title>
+	<style>
+		#parent{
+			width: 500px;
+			height: 500px;
+			border: 1px solid #2700C2;
+			margin: 100px auto;
+		}
+		#children{
+			width: 100px;
+			height: 100px;
+			background: #C0231F;
+			margin: 10px auto;
+		}
+	</style>
+</head>
+<body>
+	<div id="parent">
+		<div id="children"></div>
+	</div>
+</body>
+<script>
+	var par1 = document.getElementById('parent');
+	var child1 = document.getElementById('children');
+
+	/*par1.onclick = function(){
+		console.log(1111);	
+	}
+	child1.onclick = function(){
+		console.log(2222);
+	}*/
+	par1.addEventListener('click', function(ev){
+		// ev.stopPropagation();
+		// ev.stopImmediatePropagation();
+		console.log('parent')
+		console.log(ev.target);
+		console.log(ev.currentTarget);
+	}, false)
+	child1.addEventListener('click', function(){
+		console.log('child')
+	}, false)
+	window.addEventListener('click', function(){
+		console.log('window')
+	}, false)
+	document.addEventListener('click', function(){
+		console.log('document')
+	}, false)
+	document.documentElement.addEventListener('click', function(){
+		console.log('html')
+	}, false)
+	document.body.addEventListener('click', function(){
+		console.log('body')
+	}, false)
+</script>
+</html>
