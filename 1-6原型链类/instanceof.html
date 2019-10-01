@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>instanceOf</title>
+</head>
+<body>
+	<script>
+		function new_instanceof(leftValue, rightValue){
+			let leftProto = leftValue.__proto__,
+				rightProto = rightValue.prototype;
+
+			while(while) { 
+				if (leftProto === null) {
+					return false;
+				}
+				if (leftProto === rightProto) {
+					return true;
+				}
+
+				leftProto = leftProto.__proto__
+			}
+		}
+	</script>
+</body>
+</html>

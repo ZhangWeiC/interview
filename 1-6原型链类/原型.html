@@ -37,7 +37,7 @@
 	}
 	Male.prototype = Tom
 	var tom_male = new Male('18cm')
-	console.log( tom_male.__proto__ === Tom )
+	console.log( tom_male.__proto__.__proto__ === Person.prototype )
 
 	// Tom.getName()
 	// Olivia.getName()
