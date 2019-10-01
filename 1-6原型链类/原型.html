@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>原型、构造函数、实例、原型链</title>
+</head>
+<body>
+	
+</body>
+<script>
+	function Person(name, age) {
+		this.name = name;
+		this.age = age;
+	}
+	Person.prototype.getName = function() {
+		console.log(this.name);
+	}
+	Person.prototype.getAge = function() {
+		console.log(this.age);
+	}
+
+	// 构造函数实例的关系
+	var Tom = new Person('Tom', 23)
+	console.log( Tom.constructor === Person )
+
+	// 构造函数和原型的关系
+	console.log( Person.prototype.constructor === Person )
+
+	// 实例和原型的关系
+	console.log( Tom.__proto__ === Person.prototype );
+
+	var Olivia = new Person('Olivia', 22)
+
+	// 原型链
+	function Male(long){
+		this.long = long
+	}
+	Male.prototype = Tom
+	var tom_male = new Male('18cm')
+	console.log( tom_male.__proto__ === Tom )
+
+	// Tom.getName()
+	// Olivia.getName()
+	
+	
+</script>	
+</html>
