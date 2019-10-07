@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>继承</title>
+</head>
+<body>
+	<script>
+		// 构造函数
+		// 缺点：无法继承父类原型上方法属性
+		function Parent1(){
+			this.name = 'parent'
+		}
+		function Child2(){
+			Parent1.call(this)
+			this.type = 'child'
+		}
+
+		// 原型链
+		// 缺点：子类的实例化对象共用一个原型，相互影响
+		function Parent2(){
+			this.name = 'parent2'
+		}
+		function Child2(){
+			this.type = 'child2'
+		}
+		Child2.prototype = new Parent2()
+
+		// 组合继承
+		function Parent3(){
+			this.name = 'parent3'
+		}
+		function Child3(){
+			Parent3.call(this)
+			this.type = 'child3'
+		}
+		Child3.prototype = new Parent3()
+		// 优化1
+		Child3.prototype = Parent3.prototype
+		// 优化2
+		Child3.prototype = Object.create(Parent3.prototype)
+		Child3.prototype.constructor = Child3
+	</script>
+</body>
+</html>
