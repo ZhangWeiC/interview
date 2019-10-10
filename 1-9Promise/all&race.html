@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Promise.resolve</title>
+</head>
+
+<body>
+  <script>
+    function fn(resolve) {
+      setTimeout(() => {
+        resolve(1000)
+      }, 1000);
+    }
+
+    var pro1 = new Promise(fn)
+    var pro2 = new Promise(function(resolve, reject){
+      setTimeout(() => {
+        resolve(1500)
+      }, 1500);
+    })
+
+    Promise.race([pro1, pro2]).then(val => {
+      console.log(val)
+    })
+
+    Promise.all([pro1, pro2]).then(val => {
+      console.log(val)
+    })
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Promise.resolve</title>
+</head>
+<body>
+  <script>
+    function fn(resolve) {
+      setTimeout(() => {
+        resolve(123)
+      }, 1000);
+    }
+
+    // Promise.resolve传入的是promise对象，按原样返回
+    let p0 = new Promise(fn)
+    let p1 = Promise.resolve(p0)
+
+    console.log(p0 === p1);
+
+    // 传入thenable对象
+    let thenable = {
+      then: function(resolve, reject) {
+        resolve(123)
+      }
+    }
+
+    Promise.resolve(thenable).then(val => {
+      console.log(val);
+    })
+
+    // 参数不具有then方法或根本不是对象
+    Promise.resolve({
+      name: 'weichenz'
+    }).then(val => {
+      console.log(val)
+    })
+    
+  </script>
+</body>
+</html>
