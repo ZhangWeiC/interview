@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>这是首页</title>
+</head>
+<body>
+	<div style="width: 300px;height: 200px;margin: 0 auto">this is home page</div>
+	<button style="display: block;">
+		click me
+	</button>
+	<script>
+		function sendMsg(){
+			var xhr = XMLHttpRequest ? new XMLHttpRequest() : new window.ActiveXObject('Microsoft XMLHTTP')
+			xhr.open('get', 'http://localhost:3000/test', true)
+			xhr.send()
+			xhr.onload = function(){
+				if(xhr.status === 200 && xhr.readyState === 4){
+					console.log(xhr.responseText);
+				}
+			}
+		}
+		sendMsg()
+	</script>
+</body>
+</html>

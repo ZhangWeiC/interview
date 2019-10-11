@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>jsonp</title>
+</head>
+<body>
+	<script>
+		function jsonp(req){
+			var script = document.createElement('script');
+			var url = req.url + '?callback=' + req.callback;
+			script.src = url;
+			document.getElementsByTagName('head')[0].appendChild(script)
+			console.log(1);
+		}
+
+		function hello(res){
+			console.log(res);
+		}
+
+		jsonp({
+			url: 'http://localhost:3000/jsonp',
+			callback: 'hello'
+		})
+	</script>
+</body>
+</html>
